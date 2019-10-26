@@ -1,0 +1,29 @@
+{
+  "name": "pearbite-backend",
+  "version": "1.0.0",
+  "description": "Backend for PearBite WebApp",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camiloh95/PearBite-Backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/camiloh95/PearBite-Backend/issues"
+  },
+  "homepage": "https://github.com/camiloh95/PearBite-Backend#readme"
+}
