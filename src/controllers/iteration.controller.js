@@ -1,5 +1,5 @@
 const interationController = () => {
-    console.log("Hola mundo !");
+    console.log("Hola mundo");
 };
 
 module.exports = interationController;
