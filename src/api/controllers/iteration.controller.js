@@ -1,11 +1,20 @@
-module.exports = class iterationController {
+const IterationService = require('../../services/iteration.service');
 
-    constructor(IterationService) {
-        this.anIterationService = new IterationService();
-    }    
+class IterationController {
 
-    read(req, res) {
-        let response = this.anIterationService.read();
+    constructor() {}    
+
+    async read(req, res) {
+        let anIterationService = new IterationService();
+        let response = await anIterationService.read();
+        res.status(200).json(response);
+    }
+
+    async save(req, res) {
+        let anIterationService = new IterationService();
+        let response = await anIterationService.save(req.body, res);
         res.status(200).json(response);
     }
 }
+
+module.exports = IterationController;

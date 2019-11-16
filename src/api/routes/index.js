@@ -1,10 +1,10 @@
 const app = require('express').Router();
 
-const IterationService = require('../../services/iteration.service');
 const IterationController = require('../controllers/iteration.controller');
 
-let anInterationController = new IterationController(IterationService);
+let anInterationController = new IterationController();
 
-app.get('/iteration/read', anInterationController.read());
+app.get('/iteration/read', anInterationController.read);
+app.post('/iteration/save', anInterationController.save);
 
 module.exports = app;
