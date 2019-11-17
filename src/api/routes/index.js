@@ -6,5 +6,7 @@ let anInterationController = new IterationController();
 
 app.get('/iteration/read', anInterationController.read);
 app.post('/iteration/save', anInterationController.save);
+app.put('/iteration/update', anInterationController.update);
+app.delete('/iteration/delete', anInterationController.delete);
 
 module.exports = app;
