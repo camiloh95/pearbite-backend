@@ -1,4 +1,4 @@
-const aspectModel = require('../models/iteration.model');
+const aspectModel = require('../models/aspect.model');
 
 module.exports = class IterationService {
     constructor() {}

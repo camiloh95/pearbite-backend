@@ -10,6 +10,12 @@ class VideogameController {
         res.status(200).json(response);
     }
 
+    async save(req, res) {
+        let aVideogameService = new VideogameService();
+        let response = await aVideogameService.save(req.body);
+        res.status(200).json(response);
+    }
+
     // async save(req, res) {
     //     let aVideogameService = new VideogameService();
     //     let response = await aVideogameService.save(req.body);
