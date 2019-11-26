@@ -3,8 +3,7 @@ var Schema = mongoose.Schema;
 
 var videogameSchema = new Schema({
   name: String,
-  description: String,  
-  iterations: [Number]
+  description: String
 });
 
 module.exports = mongoose.model('Videogame', videogameSchema);

@@ -5,7 +5,7 @@ var iterationSchema = new Schema({
   name: String,
   description: String,
   betaVerificator: Number,
-  aspects: [Number]
+  videogameId: String
 });
 
 module.exports = mongoose.model('Iteration', iterationSchema);
