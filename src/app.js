@@ -15,7 +15,9 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Routes
-app.use('/', require('./api/routes/index'));
+app.use('/videogame', require('./api/routes/videogame'));
+app.use('/aspect',    require('./api/routes/aspect.js'));
+app.use('/iteration', require('./api/routes/iteration'));
 
 app.listen(port, () => {
     console.log('Server listening on port:', port);
