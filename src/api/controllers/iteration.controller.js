@@ -9,6 +9,40 @@ class IterationController {
         let anIterationService = new IterationService();
         let response = await anIterationService.read();
         res.status(200).json(response);
+    }   
+
+    async readById(req, res) {
+        let response = {};
+
+        let { error } = iterationSchema.iterationId
+                                        .validate(req.query.iterationId)
+        if (error) {
+            response.error = true;
+            response.code = 'ERR_VALID_DATA'
+            response.message = error.details[0].message
+            return res.status(400).json(response)
+        }
+
+        let anIterationService = new IterationService();
+        response = await anIterationService.readById(req.query.iterationId);
+        return res.status(200).json(response);
+    }
+
+    async readByVideogameId(req, res) {
+        let response = {};
+
+        let { error } = iterationSchema.iterationId
+                                        .validate(req.query.videogameId)
+        if (error) {
+            response.error = true;
+            response.code = 'ERR_VALID_DATA'
+            response.message = error.details[0].message
+            return res.status(400).json(response)
+        }
+
+        let anIterationService = new IterationService();
+        response = await anIterationService.readByVideogameId(req.query.videogameId);
+        return res.status(200).json(response);
     }
 
     async save(req, res) {
@@ -47,7 +81,7 @@ class IterationController {
         let response = {};
 
         let { error } = iterationSchema.iterationId
-                                        .validate(req.body.iterationId)
+                                        .validate(req.query.iterationId)
         if (error) {
             response.error = true;
             response.code = 'ERR_VALID_DATA'
@@ -56,7 +90,7 @@ class IterationController {
         }
 
         let anIterationService = new IterationService();
-        response = await anIterationService.delete(req.body.iterationId);
+        response = await anIterationService.delete(req.query.iterationId);
         return res.status(200).json(response);
     }
 }
