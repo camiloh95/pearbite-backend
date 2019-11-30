@@ -14,7 +14,7 @@ class IterationController {
     async readById(req, res) {
         let response = {};
 
-        let { error } = iterationSchema.iterationId
+        let { error } = iterationSchema.videogameId
                                         .validate(req.query.iterationId)
         if (error) {
             response.error = true;

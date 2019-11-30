@@ -16,5 +16,7 @@ module.exports = {
     videogameId:     Joi.string().required()
   }),
 
-  iterationId: Joi.string().required().label('iterationId')
+  iterationId: Joi.string().required().label('iterationId'),
+
+  videogameId: Joi.string().required().label('videogameId')
 }
