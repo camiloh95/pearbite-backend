@@ -7,6 +7,14 @@ module.exports = class IterationService {
         return await iterationModel.find();
     }
 
+    async readById(iterationId) {
+        return await iterationModel.findById(iterationId);
+    }
+
+    async readByVideogameId(videogameId) {
+        return await iterationModel.find({ videogameId: videogameId});
+    }
+
     async save(data) {
         let anIteration = new iterationModel(data);
         await anIteration.save(function(err) {
@@ -25,7 +33,6 @@ module.exports = class IterationService {
     }
 
     async delete(iterationId) {
-        console.log(iterationId)
         return await iterationModel.deleteOne({ _id: iterationId });
     }
 }
